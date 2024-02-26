@@ -14,14 +14,28 @@
                 <a class="nav-link" href="./products/upload">Cargar</a>
             </li>
             <li class="nav-item ms-3 header__item">
-                <a class="nav-link" href="./cart/10">Carrito</a>
+                <a class="nav-link" href="./cart/10">Carito</a>
             </li>
         </ul>
     </div>
 </nav>
 
+<h1 class="text-center m-5">Cargar Producto</h1>
+
+<div style="display: flex; justify-content: center; padding: 0px 100px">
+    <div style="display: flex; flex-direction: column; padding: 10px 70px; width: 25%;">
+        <h2 class="text-center m-3">Agregar Producto</h2>
+        {{>formCreate}}
+        <hr>
+        <h2 class="text-center m-3">Eliminar Producto</h2>
+        {{>formDelete}}
+    </div>
+    <div style="width: 75%;">
+        {{>cards}}
+    </div>
+</div>
+
 {{>footer}}
 
-
-{{!-- <script src="https://cdn.socket.io/4.7.3/socket.io.min.js"></script>
-<script src="/static/js/main.js"></script> --}}
+<script src="https://cdn.socket.io/4.7.3/socket.io.min.js"></script>
+<script src="/static/js/main.js"></script>

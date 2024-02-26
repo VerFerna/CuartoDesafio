@@ -3,30 +3,9 @@ import { Router } from "express";
 const productManager = new ProductManager();
 const router = Router();
 
-router.get("/upload", (req, res) => {
-  res.render("upload", {});
-});
-
-router.post("/upload", async (req, res) => {
-  const { title, description, price, code, stock, category } = req.body;
-  const thumbnail = Array.isArray(req.body.thumbnail)
-    ? req.body.thumbnail
-    : [req.body.thumbnail];
-
-  try {
-    await productManager.addProduct(
-      title,
-      description,
-      Number(price),
-      thumbnail,
-      code,
-      Number(stock),
-      category
-    );
-    res.redirect("/");
-  } catch (error) {
-    res.status(400).json("Bad Request");
-  }
+router.get("/realtimeproducts", async (req, res) => {
+  const products = await productManager.getProducts();
+  res.render("realtimeproducts", { products: products });
 });
 
 router.get("/", async (req, res) => {

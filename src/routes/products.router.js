@@ -19,15 +19,15 @@ router.post("/", async (req, res) => {
       category
     );
 
-    if (createProduct === false) {
-      res.status(400).json("All fields are required");
-    } else if (createProduct === undefined) {
-      res.status(400).json("Product already exists");
-    } else {
-      res.status(201).json("Successfully created product");
-    }
+    res.status(201).json("Successfully created product");
   } catch (error) {
-    res.status(500).json(error);
+    if (error.message.includes("All fields")) {
+      res.status(400).json(error.message);
+    } else if (error.message.includes("Product with")) {
+      res.status(400).json(error.message);
+    } else {
+      res.status(500).json(error);
+    }
   }
 });
 
@@ -47,7 +47,7 @@ router.get("/", async (req, res) => {
       const limitedProducts = products.slice(0, limit);
       res.status(206).json(limitedProducts);
     }
-  } catch (err) {
+  } catch (error) {
     res.status(500).json(error);
   }
 });
@@ -58,13 +58,13 @@ router.get("/:pid", async (req, res) => {
   try {
     const product = await productManager.getProductById(Number(pid));
 
-    if (product === undefined) {
-      res.status(404).json("Not found");
-    }
-
     res.status(200).json(product);
   } catch (error) {
-    res.status(500).json(error);
+    if (error.message.includes("Not found")) {
+      res.status(404).json(error.message);
+    } else {
+      res.status(500).json(error);
+    }
   }
 });
 
@@ -78,31 +78,47 @@ router.put("/:pid", async (req, res) => {
       props
     );
 
-    if (updatedProduct === undefined) {
-      res.status(404).json(`Product with id: ${pid} not found.`);
-    } else if (updatedProduct === false) {
-      res.status(404).json("Cannot update 'id' or 'code' property");
-    } else {
-      res.status(200).json(updatedProduct);
-    }
+    res.status(200).json(updatedProduct);
   } catch (error) {
-    res.status(500).json(error);
+    if (error.message.includes("Product does")) {
+      res.status(404).json(error.message);
+    } else if (error.message.includes("Cannot update")) {
+      res.status(404).json(error.message);
+    } else {
+      res.status(500).json(error);
+    }
   }
 });
 
-router.delete("/:pid", async (req, res) => {
+router.delete("/physical/:pid", async (req, res) => {
   const { pid } = req.params;
 
   try {
     const product = await productManager.deleteProduct(Number(pid));
 
-    if (product === undefined) {
-      res.status(404).json("Not found");
-    } else {
-      res.status(200).json(`Product with id: ${pid} was removed`);
-    }
+    res.status(200).json(`Product with id: ${pid} was removed`);
   } catch (error) {
-    res.status(500).json(error);
+    if (error.message.includes("Product does")) {
+      res.status(404).json(error.message);
+    } else {
+      res.status(500).json(error);
+    }
+  }
+});
+
+router.delete("/logical/:pid", async (req, res) => {
+  const { pid } = req.params;
+
+  try {
+    const product = await productManager.logicalDeleteProduct(Number(pid));
+
+    res.status(200).json(`Product with id: ${pid} was removed`);
+  } catch (error) {
+    if (error.message.includes("Product does")) {
+      res.status(404).json(error.message);
+    } else {
+      res.status(500).json(error);
+    }
   }
 });
 
