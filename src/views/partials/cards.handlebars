@@ -1,0 +1,17 @@
+<div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+        {{#each products}}
+        {{#if status}}
+        <div class="card" style="margin: 20px 100px; max-width: 200px">
+            <img src={{thumbnail}} width="200px" alt="img - {{thumbnail}}">
+            <div class="card-body">
+                <p class="card-title">{{category}} - {{title}}</p>
+            </div>
+            <div class="p-3">
+                <a href="/product/{{id}}" class="btn btn-primary btn-lg">Info</a>
+            </div>
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+</div>

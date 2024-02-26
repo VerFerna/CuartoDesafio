@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "CAMISA CABALLERO",
+    "description": "Lorem Ipsum1",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/dfDBBRn/Camisa-Caballero.jpg",
+    "code": "qmgb",
+    "stock": 10,
+    "category": "CABALLERO",
+    "status": true
+  },
+  {
+    "id": 2,
+    "title": "CAMISA DAMA",
+    "description": "Lorem Ipsum2",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/KqTnwj1/Camisa-Dama.jpg",
+    "code": "joqn",
+    "stock": 20,
+    "category": "DAMA",
+    "status": true
+  },
+  {
+    "id": 3,
+    "title": "CAMISA DAMA 1",
+    "description": "Lorem Ipsum3",
+    "price": 203,
+    "thumbnail": "https://i.ibb.co/R0bfhZp/camisa-Dama1.jpg",
+    "code": "i2ps",
+    "stock": 50,
+    "category": "DAMA",
+    "status": true
+  },
+  {
+    "id": 4,
+    "title": "PANTAON DAMA",
+    "description": "Lorem Ipsum4",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/VW3Lpjb/Pantalon-Dama.jpg",
+    "code": "9mh6",
+    "stock": 100,
+    "category": "DAMA",
+    "status": true
+  },
+  {
+    "id": 5,
+    "title": "PANTALON DAMA 1",
+    "description": "Lorem Ipsum5",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/FmVhnM8/Pantalon-Dama1.jpg",
+    "code": "2urg",
+    "stock": 55,
+    "category": "DAMA",
+    "status": true
+  },
+  {
+    "id": 6,
+    "title": "PERFUME CABALLERO",
+    "description": "Lorem Ipsum6",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/QvTXpy8/Perfume-Caballero.jpg",
+    "code": "63bo",
+    "stock": 90,
+    "category": "CABALLERO",
+    "status": true
+  },
+  {
+    "id": 7,
+    "title": "TRAJE CABALLERO",
+    "description": "Lorem Ipsum7",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/12R93Bw/Traje-Caballero.jpg",
+    "code": "rpj9",
+    "stock": 25,
+    "category": "CABALLERO",
+    "status": true
+  },
+  {
+    "id": 8,
+    "title": "TRAJE CABALLERO 1",
+    "description": "Lorem Ipsum8",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/njy4DJg/Traje-Caballero2.jpg",
+    "code": "8dhr",
+    "stock": 88,
+    "category": "CABALLERO",
+    "status": true
+  },
+  {
+    "id": 9,
+    "title": "KIDS",
+    "description": "Lorem Ipsum9",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/NxPsWQB/kids.jpg",
+    "code": "ueg8",
+    "stock": 50,
+    "category": "KIDS",
+    "status": true
+  },
+  {
+    "id": 10,
+    "title": "KIDS 1",
+    "description": "Lorem Ipsum10",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/1Q7HCVN/kids1.jpg",
+    "code": "otrv",
+    "stock": 30,
+    "category": "KIDS",
+    "status": true
+  },
+  {
+    "id": 10,
+    "title": "KIDS 2",
+    "description": "Lorem Ipsum10",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/y4j2BXL/kids2.jpg",
+    "code": "otrv",
+    "stock": 30,
+    "category": "KIDS",
+    "status": true
+  },
+  {
+    "id": 10,
+    "title": "KIDS 3",
+    "description": "Lorem Ipsum10",
+    "price": 20999,
+    "thumbnail": "https://i.ibb.co/XYCssK7/kids3.jpg",
+    "code": "otrv",
+    "stock": 30,
+    "category": "KIDS",
+    "status": true
+  }
+]
